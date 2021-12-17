@@ -30,9 +30,9 @@
 
 body {
   color: #333;
-  font-family: cursive;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Squada One', cursive;
 }
 
 aside {
@@ -70,8 +70,43 @@ button:hover .form__popup {
 /* ============================================================================== 
 /* Components
 /* ============================================================================== */
+/** help */
+.help {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  cursor: pointer;
+}
+
+.help .form__popup {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  left: -50%;
+  top: 145%;
+}
+
+.help .form__popup .form__popup-wrapper::before {
+  left: 5px;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.help:hover {
+  border-color: #ccc;
+}
+
+.help:hover .form__popup {
+  visibility: visible;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
 /** Builder  */
 .builder {
+  z-index: 999;
+  position: relative;
   margin: auto;
   padding-left: 1rem;
   padding-right: 1rem;

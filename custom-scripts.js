@@ -527,6 +527,7 @@ var btnShow = document.querySelector('#btn-export-show')
 var btnExport = document.querySelector('#btn-export')
 var downloadHTML = document.querySelector('#download-html')
 var downloadCSS = document.querySelector('#download-css')
+var downloadJS = document.querySelector('#download-js') // here
 var downloadNavkitJS = document.querySelector('#download-navkit-js')
 var downContainer = document.querySelector('#download-container')
 
@@ -573,6 +574,30 @@ function downloadFromFile(fileName, src, mimeType) {
   return false
 }
 
+// here
+function downloadJSFile() {
+  var data =
+    'var updateSettings = navkit.updateSettings \n updateSettings({\n    waveNumber: '
+      .concat(defaultSettings.waveNumber, ',\n    waveDelay: ')
+      .concat(defaultSettings.waveDelay, ',\n    inverse: ')
+      .concat(defaultSettings.inverse, ',\n    orientation: "')
+      .concat(defaultSettings.orientation, '",\n    crestNumber: ')
+      .concat(defaultSettings.crestNumber, ',\n    maxAmplitude: ')
+      .concat(defaultSettings.maxAmplitude, ',\n    duration: ')
+      .concat(defaultSettings.duration, ',\n    shapeFunction: "')
+      .concat(defaultSettings.shapeFunction, '",\n    color: "')
+      .concat(defaultSettings.color, '",\n    navItemsOrientation: ')
+      .concat(
+        defaultSettings.navItemsOrientation,
+        ',\n    navItemsDirection: "'
+      )
+      .concat(defaultSettings.navItemsDirection, '",\n    durationPlusDelay: ')
+      .concat(defaultSettings.durationPlusDelay, ',\n    skin: "')
+      .concat(defaultSettings.skin, '",\n  })')
+
+  downloadData(data, 'custom-scripts.js', 'text/plain')
+}
+
 function downloadNakvitFile() {
   downloadFromFile('navkit.min.js', './navkit.min.js', 'text/plain')
 }
@@ -601,6 +626,10 @@ downloadHTML.addEventListener('click', function (e) {
 })
 downloadCSS.addEventListener('click', function (e) {
   downloadCSSFile()
+  return false
+})
+downloadJS.addEventListener('click', function (e) {
+  downloadJSFile()
   return false
 })
 downloadNavkitJS.addEventListener('click', function (e) {
