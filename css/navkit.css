@@ -1,0 +1,421 @@
+/*!
+ * @author [VereAbsolutum]
+ * @email [sergiopile3@gmail.com]
+ * @create date 2021-12-01 19:45:21
+ * @modify date 2021-12-01 19:45:21
+ * @desc [Animated overlay menu]
+ *
+ * Thank you for purchasing my theme.
+ * If you have any questions that are beyond the scope of this help file,
+ * please feel free to email via my user page contact form here.
+ * Thanks so much!
+ */
+@import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+/** HEADER */
+.header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.header.is-opened .logo__link,
+.header.is-opened .toggle {
+  color: #fff;
+}
+
+.header.is-opened .svg-bg {
+  z-index: 0;
+}
+
+.header.is-opened .first-bar::before {
+  -webkit-transform: translateY(9px) rotate(45deg);
+          transform: translateY(9px) rotate(45deg);
+}
+
+.header.is-opened .first-bar::after {
+  -webkit-transform: translateY(9px) rotate(-45deg);
+          transform: translateY(9px) rotate(-45deg);
+}
+
+.header.is-opened .second-bar::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.header.is-opened .second-bar::after {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.header.is-opened .third-bar::before {
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+          transform: translateY(-9px) rotate(-45deg);
+}
+
+.header.is-opened .third-bar::after {
+  -webkit-transform: translateY(-9px) rotate(45deg);
+          transform: translateY(-9px) rotate(45deg);
+}
+
+.header.is-opened .toggle-bar::before, .header.is-opened .toggle-bar::after {
+  background-color: #fff;
+}
+
+.header.is-opened .toggle span {
+  color: #fff;
+}
+
+.header.is-opened .toggle span:first-child {
+  visibility: hidden;
+  opacity: 0;
+  right: 0;
+}
+
+.header.is-opened .toggle span:nth-child(2) {
+  opacity: 1;
+  visibility: visible;
+  right: 90px;
+}
+
+/** END HEADER */
+/** TOGGLE */
+.toggle {
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Squada One', cursive;
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 24px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.toggle__wrapper {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  margin-top: 1px;
+}
+
+.toggle-bar {
+  width: 100%;
+  height: 6px;
+  position: absolute;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.toggle-bar::before, .toggle-bar::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  background-color: #000;
+  width: 50%;
+  height: 6px;
+  -webkit-transition: background-color 1s 700ms, -webkit-transform 400ms;
+  transition: background-color 1s 700ms, -webkit-transform 400ms;
+  transition: background-color 1s 700ms, transform 400ms;
+  transition: background-color 1s 700ms, transform 400ms, -webkit-transform 400ms;
+  -webkit-transition-timing-function: cubic-bezier(0, -0.5, 0.1, 2);
+          transition-timing-function: cubic-bezier(0, -0.5, 0.1, 2);
+  z-index: 100;
+}
+
+.toggle-bar::after {
+  right: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.toggle-bar::before {
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.toggle .second-bar::before {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.toggle .second-bar::after {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.toggle span {
+  -webkit-transition: 600ms;
+  transition: 600ms;
+  color: #000;
+  -webkit-transition: right 500ms 200ms ease, color 1s 700ms ease, opacity 500ms 300ms ease, visibility 500ms 300ms ease;
+  transition: right 500ms 200ms ease, color 1s 700ms ease, opacity 500ms 300ms ease, visibility 500ms 300ms ease;
+  display: none;
+}
+
+.toggle span:first-child, .toggle span:nth-child(2) {
+  position: absolute;
+}
+
+.toggle span:first-child {
+  right: 90px;
+  opacity: 1;
+}
+
+.toggle span:nth-child(2) {
+  right: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.first-bar {
+  top: 0;
+}
+
+.second-bar {
+  top: calc(50% - 3px);
+}
+
+.third-bar {
+  top: calc(100% - 6px);
+}
+
+/** END TOGGLE */
+/** LOGO */
+.logo {
+  z-index: 100;
+}
+
+.logo__link {
+  text-decoration: none;
+  color: #000;
+  font-size: 2.3rem;
+  font-family: 'Squada One', cursive;
+  text-transform: uppercase;
+  -webkit-transition: color 1s 700ms ease;
+  transition: color 1s 700ms ease;
+}
+
+/** END LOGO */
+/** OVERLAY */
+.overlay {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.overlay__container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay--state {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.overlay.is-opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+/** END OVERLAY */
+/** NAV */
+.nav__menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-size: 3rem;
+  font-family: 'Squada One', cursive;
+}
+
+.nav-sec {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  top: calc(50% + 10rem);
+}
+
+.nav-sec .nav__link {
+  padding: 0 0.3rem;
+  font-size: 1rem;
+}
+
+.nav-sec .nav__item {
+  display: inline-block;
+}
+
+/** END NAV */
+/** SVG BG */
+.svg-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  visibility: hidden;
+}
+
+/** END SVG BG */
+/** END TRANSITIONS */
+/** SKINS */
+/** Skin: white */
+#header.header--white a {
+  color: #fff;
+}
+
+#header.header--white span {
+  color: #fff;
+}
+
+#header.header--white .toggle-bar::before, #header.header--white .toggle-bar::after {
+  background-color: #fff;
+}
+
+/** Skin: black */
+#header.header--black a {
+  color: #000;
+}
+
+#header.header--black span {
+  color: #000;
+}
+
+#header.header--black .toggle-bar::before, #header.header--black .toggle-bar::after {
+  background-color: #000;
+}
+
+/** Skin: black-white */
+#header.header--black-white a {
+  color: #000;
+}
+
+#header.header--black-white span {
+  color: #000;
+}
+
+#header.header--black-white .toggle-bar::before, #header.header--black-white .toggle-bar::after {
+  background-color: #000;
+}
+
+#header.header--black-white.is-opened a {
+  color: #fff;
+}
+
+#header.header--black-white.is-opened span {
+  color: #fff;
+}
+
+#header.header--black-white.is-opened .toggle-bar::before, #header.header--black-white.is-opened .toggle-bar::after {
+  background-color: #fff;
+}
+
+/** Skin: white-black */
+#header.header--white-black a {
+  color: #fff;
+}
+
+#header.header--white-black span {
+  color: #fff;
+}
+
+#header.header--white-black .toggle-bar::before, #header.header--white-black .toggle-bar::after {
+  background-color: #fff;
+}
+
+#header.header--white-black.is-opened a {
+  color: #000;
+}
+
+#header.header--white-black.is-opened span {
+  color: #000;
+}
+
+#header.header--white-black.is-opened .toggle-bar::before, #header.header--white-black.is-opened .toggle-bar::after {
+  background-color: #000;
+}
+
+/***/
+.position-absolute {
+  position: absolute;
+}
+
+/***/
+/** END SKINS */
+@media only screen and (min-width: 920px) {
+  .header__container {
+    height: 180px;
+  }
+  #toggle span {
+    display: block;
+  }
+  .nav__item {
+    display: inline-block;
+  }
+  .nav__link {
+    padding: 0 1.5rem;
+  }
+  .nav-sec {
+    top: calc(50% + 6rem);
+  }
+  .nav-sec .nav__link {
+    padding: 0 1rem;
+  }
+}
+/*# sourceMappingURL=navkit.css.map */

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS STYLE -->
+    <link rel="stylesheet" href=css/navkit.min.css />
+    <!-- CSS DEMO -->
+    <link rel="stylesheet" href=css/demo.css />
+    <!-- TITLE -->
+    <title>Builder</title>
+  </head>
+  <body>
+    <main id="main" class="main">
+      <div class="component">
+        <!-- Header -->
+        <header id="header" class="header header--black position-absolute">
+          <div class="header__container">
+            <!-- Logo -->
+            <div id="logo" class="logo">
+              <a href="#" class="logo__link">Builder</a>
+            </div>
+            <!-- End Logo -->
+
+            <!-- Toggle -->
+            <div id="toggle" class="toggle">
+              <span>menu</span>
+              <span>close</span>
+              <div class="toggle__wrapper">
+                <div class="toggle-bar first-bar"></div>
+                <div class="toggle-bar second-bar"></div>
+                <div class="toggle-bar third-bar"></div>
+              </div>
+            </div>
+            <!-- Overlay -->
+            <div id="overlay" class="overlay overlay--state position-absolute">
+              <div class="overlay__container">
+                <nav id="nav" class="nav">
+                  <menu id="menu" class="nav__menu">
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">Portfolio</a>
+                    </li>
+                  </menu>
+                </nav>
+                <nav id="nav-sec" class="nav nav-sec">
+                  <menu id="menu" class="nav__menu">
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fab fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fab fa-spotify"></i>
+                      </a>
+                    </li>
+                  </menu>
+                </nav>
+              </div>
+            </div>
+            <!-- End Overlay -->
+
+            <!-- SVG BACKGROUND -->
+            <div id="svg-bg" class="svg-bg position-absolute">
+              <svg
+                class="svg-anime"
+                viewBox="0 0 100 100"
+                height="100%"
+                width="100%"
+                preserveAspectRatio="none"
+              ></svg>
+            </div>
+            <!-- END SVG BACKGROUND -->
+          </div>
+          <!-- End Toggle -->
+        </header>
+        <!-- End Header -->
+      </div>
+      <aside>
+        <div id="builder" class="builder">
+          <form id="form" class="form">
+            <div class="form__element flex__wrapper">
+              <div class="form__title">
+                <span>Text</span>
+              </div>
+              <div class="form__content flex__wrapper-100">
+                <div class="select">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Text</span>
+                    </div>
+                  </div>
+                  <div class="select__description">
+                    <i class="fas fa-draw-polygon"></i>
+                  </div>
+                  <select class="select__element" name="skin" id="navText">
+                    <option class="select__option" value="dark">Dark</option>
+                    <option class="select__option" value="light">Light</option>
+                    <option class="select__option" value="light-dark">
+                      Light & Dark
+                    </option>
+                    <option class="select__option" value="dark-light">
+                      Dark & Light
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element flex__wrapper">
+              <div class="form__title">
+                <span>Wave</span>
+              </div>
+              <div class="form__content flex__wrapper-50">
+                <label for="" class="form__label input-text">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Number of waves</span>
+                    </div>
+                  </div>
+                  <span class="form__input-description">
+                    <span>Nº</span>
+                  </span>
+                  <input
+                    class="form__input"
+                    type="number"
+                    required
+                    value="3"
+                    name="numberOfWaves"
+                    min="1"
+                  />
+                </label>
+              </div>
+              <div class="form__content flex__wrapper-50">
+                <label for="" class="form__label input-text">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Max amplitude (px)</span>
+                    </div>
+                  </div>
+                  <span class="form__input-description">
+                    <i class="fas fa-wave-square"></i>
+                  </span>
+                  <input
+                    class="form__input"
+                    type="number"
+                    required
+                    value="200"
+                    name="amplitude"
+                    min="0"
+                    step="50"
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div class="form__element flex__wrapper">
+              <div class="form__title">
+                <span>Selection colors</span>
+              </div>
+              <div class="color-element"></div>
+            </div>
+
+            <div class="form__element flex__wrapper">
+              <div class="form__title">
+                <span>Wave Crest</span>
+              </div>
+              <div class="form__content flex__wrapper-50">
+                <label for="" class="form__label input-text">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Number of crests</span>
+                    </div>
+                  </div>
+                  <span class="form__input-description">
+                    <span>Nº</span>
+                  </span>
+                  <input
+                    class="form__input"
+                    type="number"
+                    value="10"
+                    name="numberOfCrests"
+                    step="5"
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div class="form__element flex__wrapper">
+              <div class="form__title">
+                <span>Animation</span>
+              </div>
+              <div class="form__content flex__wrapper-50">
+                <label for="" class="form__label input-text">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Duration (ms)</span>
+                    </div>
+                  </div>
+                  <span class="form__input-description">
+                    <i class="far fa-clock"></i>
+                  </span>
+                  <input
+                    class="form__input"
+                    type="number"
+                    required
+                    value="1000"
+                    name="duration"
+                    min="0"
+                    step="100"
+                  />
+                </label>
+              </div>
+
+              <div class="form__content flex__wrapper-50">
+                <label for="" class="form__label input-text">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Delay (ms)</span>
+                    </div>
+                  </div>
+                  <span class="form__input-description">
+                    <i class="fas fa-history"></i>
+                  </span>
+                  <input
+                    class="form__input"
+                    type="number"
+                    required
+                    value="200"
+                    name="delay"
+                    min="0"
+                    step="50"
+                  />
+                </label>
+              </div>
+
+              <div class="form__content flex__wrapper-100">
+                <div class="select">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Direction</span>
+                    </div>
+                  </div>
+                  <div class="select__description">
+                    <i class="far fa-compass"></i>
+                  </div>
+                  <select
+                    class="select__element"
+                    name="direction"
+                    id="direction"
+                  >
+                    <option class="select__option" value="vertical">
+                      Vertical
+                    </option>
+                    <option class="select__option" value="horizontal">
+                      Horizontal
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__content flex__wrapper-100">
+                <div class="select">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Shape function</span>
+                    </div>
+                  </div>
+                  <div class="select__description">
+                    <i class="fas fa-draw-polygon"></i>
+                  </div>
+                  <select
+                    class="select__element"
+                    name="shapeFunction"
+                    id="direction"
+                  >
+                    <option class="select__option" value="square">
+                      Square
+                    </option>
+                    <option class="select__option" value="sin">Sin</option>
+                    <option class="select__option" value="random">
+                      Random
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__content">
+                <label for="#direction" class="form__label input-checkbox">
+                  <input
+                    class="form__input input-cbox"
+                    type="checkbox"
+                    id="orientation"
+                    name="orientation"
+                    value="true"
+                  />
+                  <span class="form__input-description"> inverse </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form__element flex__wrapper">
+              <div class="form__title">
+                <span>Nav Items</span>
+              </div>
+
+              <div class="form__content flex__wrapper-50">
+                <label for="" class="form__label input-text">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Nav-Delay (ms)</span>
+                    </div>
+                  </div>
+                  <span class="form__input-description">
+                    <i class="fas fa-history"></i>
+                  </span>
+                  <input
+                    class="form__input"
+                    type="number"
+                    required
+                    value="0.4"
+                    name="navItemsDelay"
+                    min="0"
+                    max="1"
+                    step="0.1"
+                  />
+                </label>
+              </div>
+
+              <div class="form__content flex__wrapper-100">
+                <div class="select">
+                  <div class="form__popup">
+                    <div class="form__popup-wrapper">
+                      <span>Nav-items animation</span>
+                    </div>
+                  </div>
+                  <div class="select__description">
+                    <i class="fas fa-draw-polygon"></i>
+                  </div>
+                  <select
+                    class="select__element"
+                    name="navItemsDirection"
+                    id="navItemsDirection"
+                  >
+                    <option class="select__option" value="vertical">
+                      Vertical
+                    </option>
+                    <option class="select__option" value="horizontal">
+                      Horizontal
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__content">
+                <label
+                  for="#nav-items-orientation"
+                  class="form__label input-checkbox"
+                >
+                  <input
+                    class="form__input input-cbox"
+                    type="checkbox"
+                    id="navItemsOrientation"
+                    name="navItemsOrientation"
+                    value="true"
+                  />
+                  <span class="form__input-description"> inverse </span>
+                </label>
+              </div>
+            </div>
+          </form>
+          <div class="form__element flex__wrapper">
+            <div id="btn-export" class="form__title">
+              <span>Export</span>
+              <div>
+                <i id="btn-export-show" class="fas fa-plus"></i>
+                <i id="btn-export-hide" class="fas fa-minus"></i>
+              </div>
+            </div>
+            <div
+              id="download-container"
+              class="download-container flex__wrapper-100 display-none"
+              style="overflow: hidden"
+            >
+              <button
+                id="download-html"
+                class="form__content flex__wrapper-100"
+              >
+                Download html
+              </button>
+              <button id="download-css" class="form__content flex__wrapper-100">
+                Download css
+              </button>
+              <button class="form__content flex__wrapper-100">
+                <a href="https://animejs.com" target="_blank" class="">
+                  Download animeJS
+                </a>
+              </button>
+              <button
+                id="download-navkit-js"
+                class="form__content flex__wrapper-100"
+              >
+                Download navkitJS
+              </button>
+              <button id="download-js" class="form__content flex__wrapper-100">
+                Download custom-script
+                <div class="form__popup">
+                  <div class="form__popup-wrapper">
+                    <span>Not available for preview</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="anime.min.js"></script>
+    <script src="navkit.min.js"></script>
+    <script src="custom-scripts.js"></script>
+  </body>
+</html>
