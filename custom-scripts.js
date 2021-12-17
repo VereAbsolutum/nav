@@ -527,7 +527,8 @@ var btnShow = document.querySelector('#btn-export-show')
 var btnExport = document.querySelector('#btn-export')
 var downloadHTML = document.querySelector('#download-html')
 var downloadCSS = document.querySelector('#download-css')
-var downloadJS = document.querySelector('#download-js') // here
+// here
+var downloadJS = document.querySelector('#download-js')
 var downloadNavkitJS = document.querySelector('#download-navkit-js')
 var downContainer = document.querySelector('#download-container')
 
@@ -628,6 +629,7 @@ downloadCSS.addEventListener('click', function (e) {
   downloadCSSFile()
   return false
 })
+// here
 downloadJS.addEventListener('click', function (e) {
   downloadJSFile()
   return false
