@@ -5,15 +5,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ===============================================================================
+        DEFINE THE CSS FILE SRC FOR THE NAVKIT OVERLAY MENU
+        (Delete this comment)
+    ==================================================================================== -->
     <!-- CSS STYLE -->
     <link rel="stylesheet" href="navkit.min.css" />
     <!-- TITLE -->
     <title>Document</title>
   </head>
   <body>
-    <!-- Copy the following code inside your html file (Delete this comment)-->
+    <!-- ===============================================================================
+        COPY THE FOLLOWING CODE INSIDE YOUR HTML FILE IN YOURS HEADER POSITION 
+        (Delete this comment)
+    ==================================================================================== -->
 
-    <!-- Header -->
+    <!--------------------------------- Header ---------------------------->
     <header id="header" class="header header--black ">
       <div class="header__container">
         <!-- Logo -->
@@ -32,6 +39,7 @@
             <div class="toggle-bar third-bar"></div>
           </div>
         </div>
+
         <!-- Overlay -->
         <div id="overlay" class="overlay overlay--state ">
           <div class="overlay__container">
@@ -85,7 +93,13 @@
       </div>
       <!-- End Toggle -->
     </header>
-    <!-- End Header -->
+    <!--------------------------------- End Header --------------------------------->
+
+
+    <!-- ===============================================================================
+        SET THE SCRIPTS FOR THE NAVKIT OVERLAY MENU TO WORK PROPERLY
+        (Delete this comment)
+    ==================================================================================== -->
     <!-- SCRIPTS -->
     <script src="anime.min.js"></script>
     <script src="navkit.min.js"></script>

@@ -10,6 +10,18 @@
  * please feel free to email via my user page contact form here.
  * Thanks so much!
  */
+/*
+ * Content:
+ *  1) Reset
+ *  2) Layout
+ *  3) Components
+ *  4) Containers
+ *  5) utilities
+ *  6) skins
+ **/
+/* ============================================================================== 
+/* Reset
+/* ============================================================================== */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -23,20 +35,27 @@ body {
   overflow: hidden;
 }
 
-.dark {
-  background-color: #414141;
-}
-
-.white {
-  background-color: #fff;
-}
-
 aside {
   overflow-x: hidden;
   overflow-y: auto;
   height: 100vh;
 }
 
+button {
+  position: relative;
+}
+
+button:hover .form__popup {
+  visibility: visible;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+/* ============================================================================== 
+/* layout
+/* ============================================================================== */
 .main {
   width: 100%;
   position: relative;
@@ -48,12 +67,10 @@ aside {
           justify-content: center;
 }
 
-.component {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
+/* ============================================================================== 
+/* Components
+/* ============================================================================== */
+/** Builder  */
 .builder {
   margin: auto;
   padding-left: 1rem;
@@ -71,6 +88,7 @@ aside {
   font-weight: 600;
 }
 
+/** Form */
 .form__title {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -218,6 +236,7 @@ aside {
   padding: 0.5rem;
 }
 
+/** select */
 .select {
   width: 70%;
   height: 100%;
@@ -251,6 +270,90 @@ aside {
   padding: 0.5rem;
 }
 
+/** component */
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 100%;
+}
+
+.hero__description {
+  margin-top: 4.5rem;
+}
+
+.hero__title {
+  font-size: 1.5rem;
+}
+
+.hero__subtitle {
+  font-size: 0.85rem;
+}
+
+@media screen and (min-width: 1020px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+  .hero__description {
+    width: 40%;
+  }
+}
+
+/** video */
+.video {
+  width: 100%;
+}
+
+.video-container {
+  position: relative;
+  width: 60%;
+  min-width: 380px;
+}
+
+/** buttons */
+.button {
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.button-link {
+  text-decoration: none;
+}
+
+#download-js {
+  border: none;
+  border-color: rgba(224, 224, 224, 0.788);
+}
+
+/* ============================================================================== 
+/* Containers
+/* ============================================================================== */
 .flex__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,28 +376,59 @@ aside {
   width: 100%;
 }
 
-button {
-  position: relative;
-}
-
-button:hover .form__popup {
-  visibility: visible;
-  -webkit-transition-duration: 100ms;
-          transition-duration: 100ms;
-  -webkit-transition-delay: 0.8s;
-          transition-delay: 0.8s;
-}
-
-#download-js {
-  border: none;
-  border-color: rgba(224, 224, 224, 0.788);
-}
-
 .download-container {
   padding-bottom: 2rem;
 }
 
+/* ============================================================================== 
+/* Utilities
+/* ============================================================================== */
 .display-none {
   display: none;
+}
+
+/* ============================================================================== 
+/* skins
+/* ============================================================================== */
+.dark {
+  background-color: #212152;
+}
+
+.dark .button-link {
+  background-color: #dfc42d;
+}
+
+.dark .button-link:hover {
+  background-color: rgba(223, 196, 45, 0.9);
+}
+
+.dark .button-description {
+  color: #000;
+}
+
+.dark .hero__title,
+.dark .hero__subtitle {
+  color: #fff;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.white .button-link {
+  background-color: #706212;
+}
+
+.white .button-link:hover {
+  background-color: rgba(112, 98, 18, 0.9);
+}
+
+.white .button-description {
+  color: #fff;
+}
+
+.white .hero__title,
+.white .hero__subtitle {
+  color: #000;
 }
 /*# sourceMappingURL=demo.css.map */

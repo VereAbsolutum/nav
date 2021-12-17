@@ -543,16 +543,16 @@ function downloadData(data, fileName, mimeType) {
       download: fileName,
       target: '_blank'
     })
-    var handler = function (e) {
-      e.preventDefault()
-      window.open(href, '_blank', 'width=600,height=400')
-    }
+    // var handler = function (e) {
+    //   e.preventDefault()
+    //   window.open(href, '_blank', 'width=600,height=400')
+    // }
 
-    a.addEventListener('click', handler)
+    // a.addEventListener('click', handler)
     a.click()
     URL.revokeObjectURL(href)
     a.remove()
-    a.removeEventListener('click', handler)
+    // a.removeEventListener('click', handler)
   }
 
   return false
