@@ -105,9 +105,10 @@ button:hover .form__popup {
 
 /** Error */
 .error {
-  position: absolute;
+  z-index: 99;
+  position: fixed;
   top: 2rem;
-  left: 3rem;
+  right: 1.5rem;
   color: #fff;
   padding: 0.25rem 0.5rem;
   background-color: #af0606;
