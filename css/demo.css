@@ -103,6 +103,20 @@ button:hover .form__popup {
           transition-delay: 0.8s;
 }
 
+/** Error */
+.error {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  background-color: #af0606;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: underline;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 /** Builder  */
 .builder {
   z-index: 999;

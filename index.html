@@ -104,15 +104,15 @@
           </div>
 
           <div class="video-container">
+            <a
+              href="https://www.youtube.com/watch?v=K3PFIKCp9oc&list=PLBHyVOY6O3sgRVtpFaFcOw0KJ5qFvMb3K"
+            >
+              More videos
+            </a>
             <video src="./assets/navkit-download.mp4" class="video" controls>
               video
             </video>
-            <div class="video__description">
-              <a
-                href="https://www.youtube.com/watch?v=K3PFIKCp9oc&list=PLBHyVOY6O3sgRVtpFaFcOw0KJ5qFvMb3K"
-                >More videos</a
-              >
-            </div>
+            <div class="video__description"></div>
           </div>
         </div>
       </section>
@@ -126,6 +126,10 @@
               </div>
             </div>
           </i>
+          <div id="error" class="error display-none">
+            Not available in preview version
+          </div>
+
           <form id="form" class="form">
             <div class="form__element flex__wrapper">
               <div class="form__title">
@@ -173,7 +177,7 @@
                     class="form__input"
                     type="number"
                     required
-                    value="3"
+                    value="2"
                     name="numberOfWaves"
                     min="1"
                   />
@@ -205,7 +209,7 @@
                   <input
                     class="form__input"
                     type="number"
-                    value="10"
+                    value="18"
                     name="numberOfCrests"
                     step="5"
                   />
@@ -275,7 +279,7 @@
                     class="form__input"
                     type="number"
                     required
-                    value="200"
+                    value="100"
                     name="delay"
                     min="0"
                     step="50"
@@ -322,10 +326,10 @@
                     name="shapeFunction"
                     id="direction"
                   >
+                    <option class="select__option" value="sin">Sin</option>
                     <option class="select__option" value="square">
                       Square
                     </option>
-                    <option class="select__option" value="sin">Sin</option>
                     <option class="select__option" value="random">
                       Random
                     </option>
@@ -467,6 +471,6 @@
     <!-- SCRIPTS -->
     <script src="anime.min.js"></script>
     <script src="navkit.min.js"></script>
-    <script src="custom-scripts.js"></script>
+    <script src="custom-scripts.min.js"></script>
   </body>
 </html>
